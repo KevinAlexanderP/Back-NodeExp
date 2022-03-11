@@ -5,7 +5,7 @@ const formidableMiddleware = require("express-formidable");
 const config = require("./config/database");
 
 /** Connect to DB */
-mongoose.connect(config.database, {
+mongoose.connect('mongodb+srv://userS:evUVvBeuXELPsCxk@cluster0.0gjhv.mongodb.net/shopping?retryWrites=true&w=majority', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
 });
@@ -61,5 +61,5 @@ app.use("/orders", orders);
 app.use("/auth", auth);
 
 /** Start the server */
-const port = proccess.env.PORT ||  3000;
+const port =  3000;
 app.listen(port, () => console.log("Server running at port " + port));
